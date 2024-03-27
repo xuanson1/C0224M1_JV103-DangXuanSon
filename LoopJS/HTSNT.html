@@ -6,23 +6,54 @@
 </head>
 <body>
 <script>
-    let number = +prompt("Nhập số lượng số nguyên tố cần in ra :");
     let count = 0;
-    let N = 2;
-    while(count<number){
-        let isPrime = true;
-        for(let i=2;i<=Math.sqrt(N);i++) {
+    let j = 2;
+    while (count < 30) {
+        let N = j;
+        let check = true;
+        for (let i = 2; i < N; i++) {
             if (N % i === 0) {
-                isPrime = false;
+                check = false;
                 break;
             }
         }
-        if (isPrime) {
-            document.write( N + "</br>");
+        if (check) {
             count++;
+            document.write(j + " ");
         }
-        N++;
+        j++;
     }
+    // let N = +prompt("Nhập vào đây 1 số !");
+    // let check = true;
+    // for(let i = 2; i<N;i++) {
+    //     if (N % i === 0 ) {
+    //         check = false;
+    //         break;
+    //     }
+    // }
+    // if(check) {
+    //     alert(N + " là số nguyên tố");
+    // }else {
+    //     alert(N + " không phải là số nguyên tố");
+    // }
+    //cách 3
+    // let number = +prompt("Nhập số lượng số nguyên tố cần in ra :");
+    // let count = 0;
+    // let N = 2;
+    // while(count<number){
+    //     let isPrime = true;
+    //     for(let i=2;i<=Math.sqrt(N);i++) {
+    //         if (N % i === 0) {
+    //             isPrime = false;
+    //             break;
+    //         }
+    //     }
+    //     if (isPrime) {
+    //         document.write( N + "</br>");
+    //         count++;
+    //     }
+    //     N++;
+    // }
 </script>
 </body>
 </html>

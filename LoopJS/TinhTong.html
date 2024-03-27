@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number ;
+    let total=0;
+    while (true){
+        number = prompt("Nhập vào 1 số bất kì và nhấn q để thoát chương trình");
+        if(number === 'q'){
+            break;
+        }
+        total+=parseInt(number);
+    }document.write("Total = " + total);
+</script>
+</body>
+</html>
