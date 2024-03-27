@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id = "result">
+
+</div>
+<script>
+    let students = [
+        [20,"Son","son@gmail.com", "0909090"],
+        [28,"Cuong","cuong@gmail.com", "091209090"],
+        [30,"Hung","hung@gmail.com", "090909023232"],
+    ]
+    //
+    let content = "<table border='1'>"
+    for(let i = 0; i < students.length;i++){
+        content +="<tr>";
+        for(let j = 0; j < students.length;j++){
+                content += "<td>" + students[i][j] + "</td>";
+            }
+        content += "</tr>"
+        }
+        content += "</table>"
+    document.getElementById("result").innerHTML = content;
+</script>
+</body>
+</html>
