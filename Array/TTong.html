@@ -27,10 +27,26 @@
     // document.write(total)
     //Tính tổng đường chéo trái
     let total = 0;
-    for (let i = 0; i <numbers.length ; i++) {
+    for (let i = 0; i < numbers.length ; i++) {
         total += numbers[i][i];
     }
-    document.write(total)
+    document.write(total + " ")
+    // Tính tổng đuờng chéo trái và đường chéo phải
+    let total1 = 0;
+    let total2 = 0;
+    for (let i = 0; i < numbers.length ; i++) {
+        for (let j = 0; j < numbers[i].length ; j++) {
+            if(i===j){
+                total1 += numbers[i][j];
+            }if(i+j===numbers.length - 1){
+                total2 +=numbers[i][j];
+            }
+
+        }
+    }
+    document.write(total1 + " ")
+    document.write(total2 + " ")
+
 </script>
 </body>
 </html>
