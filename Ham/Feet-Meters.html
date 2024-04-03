@@ -1,23 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<input id = "input" type = "number" >
+<select id = "Change">
+    <option value="Feet" > Feet to Meters</option>
+    <option value="Meters" > Meters to Feet</option>
+</select>
+    <button onclick="result()" > Change </button>
 <script>
-    let foot = +prompt("Nhập số foot cần chuyển đổi sang meters: ")
-    let meter = +prompt("Nhập số meters cần chuyển đổi sang feet: ")
-    function footToMeter(foot){
-        meter = 3.279 * foot;
-        return meter;
+    function result(){
+        let input = parseFloat(document.getElementById("input").value);
+        let select = document.getElementById("Change");
+        let option = select.options[select.selectedIndex].value;
+        let result;
+        if(option === "Feet"){
+            result = 0.305 * input;
+            alert(input + "feet = " + result + "meter");
+        }else if(option === "Meters") {
+            result = 0.327 * input;
+            alert(input + "meter = " + result + "foot");
+        }
     }
-    function meterToFoot(meter){
-        foot = 0.305 * meter;
-        return foot;
-    }
-    document.write(foot + " foot = " + meterToFoot(foot) + " meter" + "</br>");
-    document.write(meter + " meter = " + footToMeter(meter) + " foot")
+    // function footToMeter(foot){
+    //     meter = 3.279 * foot;
+    //     return meter;
+    // }
+    // function meterToFoot(meter){
+    //     foot = 0.305 * meter;
+    //     return foot;
+    // }
+    // document.write(foot + " foot = " + meterToFoot(foot) + " meter" + "</br>");
+    // document.write(meter + " meter = " + footToMeter(meter) + " foot")
 
 
 </script>
