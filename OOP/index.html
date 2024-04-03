@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <script>
+        class Book{
+        title;
+        price;
+        author;
+        status;
+        image;
+
+        constructor(title, price, author, status, image) {
+            this.title = title;
+            this.price = price;
+            this.status = status;
+            this.author = author;
+            this.image = image;
+        }
+            updateName(newName){
+                this.name = newName;
+            }
+            updatePrice(newPrice){
+                this.price = newPrice;
+            }
+        }
+        let conan = new Book("Conan", " 23000", "Japan", 1, "image.img")
+        conan.updateName("Conan V2");
+        conan.updatePrice("2300000")
+        console.log(conan);
+    </script>
+</body>
+</html>
