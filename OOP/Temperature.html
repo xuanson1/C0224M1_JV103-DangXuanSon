@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        C;
+        constructor(C) {
+            this.C = C;
+        }
+        getC(){
+            return this.C;
+        }
+        setC(C){
+            this.C = C;
+        }
+        getCF(){
+            return this.C * 1.8 +32;
+        }
+        getCKelvin(){
+            return this.C * 273.15;
+        }
+    }
+    let myTemperature = new Temperature(25);
+    let c = myTemperature.getC()
+
+    document.write("Nhiệt độ F = " + myTemperature.getCF());
+    document.write("Nhiệt độ Kelvin = " + myTemperature.getCKelvin())
+</script>
+</body>
+</html>
