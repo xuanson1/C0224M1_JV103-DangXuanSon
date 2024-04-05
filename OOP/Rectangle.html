@@ -5,8 +5,49 @@
     <title>Title</title>
 </head>
 <body>
+<canvas id="DemoCanvas" width="200" height=""></canvas>
+
 <script>
-    let Rectangle = function ()
+    class Rectangle {
+        height;
+        width;
+        constructor(width,height) {
+            this.height = height;
+            this.width = width;
+        }
+        getHeight(){
+            return this.height;
+        }
+        getWidth(){
+            return this.width;
+        }
+        setHeight(height){
+            this.height = height;
+        }
+        setWidth(width){
+            this.width = width;
+        }
+        getArea(){
+            return this.height * this.width;
+        }
+        getPerimeter(){
+            return (this.height + this.width)*2;
+        }
+    }
+    let myRectangle = new Rectangle(150,50);
+    let height = myRectangle.getHeight();
+    let width = myRectangle.getWidth();
+
+
+
+    document.write( "<br>"+ "Diện tích hình chữ nhật = " + myRectangle.getArea()+"</br>");
+    document.write("Chu vi hình chữ nhật = " + myRectangle.getPerimeter());
+
+    let canvas = document.getElementById("DemoCanvas");
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle='#fa4b2a';
+    ctx.fillRect(10, 10, width, height)
+
 </script>
 </body>
 </html>
