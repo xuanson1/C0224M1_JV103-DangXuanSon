@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*Alice và Bob mỗi người tạo ra một vấn đề cho HackerRank. Người đánh giá đánh giá hai thử thách, cho điểm theo thang điểm từ 1 đến 100 cho ba loại: tính rõ ràng của vấn đề, tính độc đáo và độ khó.
+
+    Xếp hạng cho thử thách của Alice là bộ ba a = (a[0], a[1], a[2]) và xếp hạng cho thử thách của Bob là bộ ba b = (b[0], b[1], b [2]).
+
+    Nhiệm vụ là tìm điểm so sánh của chúng bằng cách so sánh a[0] với b[0], a[1] với b[1] và a[2] với b[2].
+
+    Nếu a[i] > b[i] thì Alice được thưởng 1 điểm.
+    Nếu a[i] < b[i] thì Bob được thưởng 1 điểm.
+    Nếu a[i] = b[i] thì không ai nhận được điểm.
+    Điểm so sánh là tổng số điểm mà một người kiếm được.
+
+    Cho a và b, xác định điểm so sánh tương ứng của chúng.
+
+    Vd a = [3,4, 8]
+    b = [4, 5, 3]
+
+    ket qua: 1 2
+     */
+    let A = [3,4,8];
+    let B = [4,5,3];
+    let pointA = 0;
+    let pointB = 0;
+    for (let i = 0; i < A.length; i++) {
+        if(A[i] > B[i]){
+            pointA += 1;
+        }else{
+            pointB += 1;
+        }
+    }
+    document.write("Điểm của Alice =" + pointA );
+    document.write("Điểm của Bob =" + pointB );
+
+</script>
+</body>
+</html>

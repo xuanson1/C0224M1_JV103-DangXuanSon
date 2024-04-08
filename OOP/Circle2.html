@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id = "canvas" width="500" height="500" style="border: 1px solid red "></canvas>
+<script>
+    class Circle {
+        x;
+        y;
+        radius;
+        color;
+        constructor(x,y,radius,color) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+            this.canvas = document.getElementById("canvas");
+            this.ctx = canvas.getContext("2d");
+            this.flag = 'up';
+        }
+        draw(){
+            this.ctx.beginPath();
+            this.ctx.arc(this.x,this.y,this.radius,0,Math.PI * 2);
+            this.ctx.fillStyle = this.color;
+            this.ctx.fill();
+        }
+        moveDownRight(){
+            this.y += 2;
+            this.x += 2;
+        }
+        moveDownLeft(){
+            this.y += 2;
+            this.x -= 2;
+        }
+        moveUpRight(){
+            this.y -= 2;
+            this.x += 2;
+        }
+        moveUpLeft(){
+            this.y -= 2;
+            this.x -= 2;
+        }
+        move(){
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            if (this.y - this.radius <= 0 && this.x + this.radius < this.canvas.width) {
+                this.flag = "down-right";
+            } else if (this.y - this.radius <= 0 && this.x + this.radius >= this.canvas.width) {
+                this.flag = "down-left";
+            } else if (this.y + this.radius >= this.canvas.height && this.x + this.radius <= this.canvas.width) {
+                this.flag = "up-right";
+            } else if (this.y + this.radius >= this.canvas.height && this.x + this.radius >= this.canvas.width) {
+                this.flag = "up-left";
+            } else if (this.y - this.radius <= 0 && this.x - this.radius > 0) {
+                this.flag = "down-left";
+            } else if (this.y - this.radius <= 0 && this.x - this.radius <= 0) {
+                this.flag = "down-right";
+            } else if (this.y + this.radius >= this.canvas.height && this.x - this.radius > 0) {
+                this.flag = "up-left";
+            } else if (this.y + this.radius >= this.canvas.height && this.x - this.radius <= 0) {
+                this.flag = "up-right";
+            }
+            switch (this.flag) {
+                case "down-right":
+                    this.moveDownRight();
+                    break;
+                case "up-right":
+                    this.moveUpRight();
+                    break;
+                case "down-left":
+                    this.moveDownLeft();
+                    break;
+                default:
+                    this.moveUpLeft();
+                    break;
+            }
+            this.draw();
+        }
+    }
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext("2d")
+    let circle = new Circle(100,200,20,"black");
+    circle.draw();
+    setInterval(() => {
+        circle.move();
+    }, 10)
+</script>
+</body>
+</html>
